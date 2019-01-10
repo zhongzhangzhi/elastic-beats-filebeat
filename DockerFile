@@ -1,0 +1,12 @@
+FROM zzz/jdk:8u191
+MAINTAINER zzz
+
+RUN mkdir /filebeats
+ADD . /filebeats
+
+WORKDIR /filebeats
+
+EXPOSE 8081
+
+ENTRYPOINT ["java","-jar","elastic-beats-filebeat-0.0.1-SNAPSHOT.jar"]
+
